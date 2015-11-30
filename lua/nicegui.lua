@@ -2,8 +2,12 @@ wifi.setmode(wifi.STATION)
 wifi.sta.config("SSID","PASSWORD")
 led1 = 3
 led2 = 4
+fan = 6
+garage = 8
 gpio.mode(led1, gpio.OUTPUT)
 gpio.mode(led2, gpio.OUTPUT)
+gpio.mode(fan, gpio.OUTPUT)
+gpio.mode(garage, gpio.OUTPUT)
 srv=net.createServer(net.TCP,1)
 srv:listen(80,function(conn)
     conn:on("receive", function(client,request)
@@ -47,13 +51,13 @@ srv:listen(80,function(conn)
         elseif(_GET.pin == "OFF2")then
               gpio.write(led2, gpio.LOW);
         elseif(_GET.pin == "ON3")then
-              gpio.write(6, gpio.HIGH);
+              gpio.write(fan, gpio.HIGH);
         elseif(_GET.pin == "OFF3")then
-              gpio.write(6, gpio.LOW);
+              gpio.write(fan, gpio.LOW);
         elseif(_GET.pin == "ON4")then
-              gpio.write(8, gpio.HIGH);
+              gpio.write(garage, gpio.HIGH);
         elseif(_GET.pin == "OFF4")then
-              gpio.write(8, gpio.LOW);
+              gpio.write(garage, gpio.LOW);
         end
         client:send(buf);
         client:send(lol);
