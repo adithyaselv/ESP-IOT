@@ -1,5 +1,5 @@
 wifi.setmode(wifi.STATION)
-wifi.sta.config("BSNL_AP","chennai_11")
+wifi.sta.config("SSID","PASSWORD")
 led1 = 3
 led2 = 4
 gpio.mode(led1, gpio.OUTPUT)
