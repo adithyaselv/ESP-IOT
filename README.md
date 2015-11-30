@@ -2,4 +2,4 @@
 
 Some stuff that were done
 
-![](https:adithyaselv.com/assets/images/nicegui.jpg)
+![](http://adithyaselv.com/assets/images/nicegui.jpg)
